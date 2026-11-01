@@ -62,7 +62,7 @@
   {"id":"music","label":"Music (Spotify)","kind":"skip","omarchy":"SUPER + SHIFT + M","reason":"Spotify is not installed; Ryoku keeps Ryotunes on Super+J and the visualiser on Shift+M."},
   {"id":"private-browser","label":"Private browser","kind":"skip","omarchy":"SUPER + SHIFT + ALT + B","reason":"Ryoku has no private-window action."},
   {"id":"tmux","label":"Tmux terminal","kind":"skip","omarchy":"SUPER + ALT + Return","reason":"tmux is not installed."},
-  {"id":"herdr","label":"Herdr agent manager","kind":"skip","omarchy":"SUPER + CTRL + Return","reason":"Herdr is not part of Ryoku."},
+  {"id":"herdr","label":"Herdr agent manager","kind":"add","omarchy":"SUPER + CTRL + Return","lua":"hl.dsp.exec_cmd(\"herdr-app\")"},
   {"id":"calculator","label":"Calculator","kind":"skip","omarchy":"SUPER + SHIFT + Q","reason":"No calculator is installed."},
   {"id":"obsidian","label":"Obsidian","kind":"skip","omarchy":"SUPER + SHIFT + O","reason":"Obsidian is not installed; Notes stays on Super+O."},
   {"id":"signal","label":"Signal","kind":"skip","omarchy":"SUPER + SHIFT + G","reason":"Signal is not installed."},
