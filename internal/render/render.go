@@ -59,7 +59,22 @@ local function iokb_clipboard(default_mods, default_key, terminal_mods, terminal
             iokb_send_chord(default_mods, default_key)
         end
     end
-end`
+end
+
+-- Close with the same Shima confirm path as the shipped modules/binds.lua.
+local function iokb_close()
+    local cfg = os.getenv("XDG_CONFIG_HOME") or ((os.getenv("HOME") or "") .. "/.config")
+    local f = io.open(cfg .. "/ryoku/shell.json")
+    local s = f and f:read("a") or ""
+    if f then f:close() end
+    local style = s:match('"barStyle"%s*:%s*"([^"]*)"') or "orpheus"
+    if style == "iris" and s:find('"closeConfirm"%s*:%s*{[^{}]*"enabled"%s*:%s*true') then
+        hl.exec_cmd("qs -c shell ipc call closeConfirm trigger")
+    else
+        hl.dispatch(hl.dsp.window.close())
+    end
+end
+`
 
 // Block renders the body that goes between the user.lua markers.
 func Block(adds []planner.Add) string {

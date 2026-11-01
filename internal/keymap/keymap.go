@@ -95,6 +95,7 @@ func Validate(actions []Action) error {
 // the "add one modifier" rule. An empty entry means: derive one generically.
 var fallbacks = map[string]string{
 	"shell.lock":                  "SUPER + CTRL + L", // Omarchy's own lock chord
+	"shell.wallpaper":             "SUPER + CTRL + W", // Omarchy\'s background picker
 	"shell.clipboard":             "SUPER + CTRL + V", // Omarchy's clipboard history
 	"column.center":               "SUPER + ALT + C",
 	"workspace.overview":          "SUPER + CTRL + Tab",

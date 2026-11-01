@@ -108,6 +108,7 @@ Quando o chord do Omarchy já faz outra coisa no Ryoku, o bind nativo vai para:
 | Group | `Super+G` |
 | Float | `Super+T` |
 | Scratchpad | `Super+grave` |
+| Wallpaper picker | `Super+Ctrl+W` (o background picker do Omarchy) |
 | Window → monitor | `Super+Shift+Ctrl+seta` |
 | Workspace → monitor | `Super+Shift+Alt+seta` |
 

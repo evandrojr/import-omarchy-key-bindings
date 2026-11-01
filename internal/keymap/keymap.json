@@ -39,7 +39,8 @@
   {"id":"dictation","label":"Dictation","kind":"add","omarchy":"SUPER + CTRL + X","lua":"hl.dsp.exec_cmd(\"ryoku-shell voice\")"},
   {"id":"share","label":"Share (LocalSend)","kind":"add","omarchy":"SUPER + CTRL + S","lua":"hl.dsp.exec_cmd(\"localsend\")"},
 
-  {"id":"close-w","label":"Close window (Super+W)","kind":"skip","omarchy":"SUPER + W","reason":"Omarchy also closes with Super+Q; Ryoku keeps Super+W for its wallpaper picker."},
+  {"id":"wallpaper","label":"Wallpaper / theme picker","kind":"align","bind":"shell.wallpaper","omarchy":"SUPER + CTRL + W"},
+  {"id":"close-w","label":"Close window (Super+W)","kind":"add","omarchy":"SUPER + W","lua":"iokb_close()"},
   {"id":"app-grid","label":"App grid","kind":"skip","omarchy":"SUPER + ALT + Space","reason":"Ryoku binds this chord to Rashin and has no separate app grid."},
   {"id":"split-position","label":"Toggle split position","kind":"skip","omarchy":"SUPER + J","reason":"Ryoku binds Super+J to Ryotunes and has no dwindle split toggle."},
   {"id":"sticky-float","label":"Sticky floating window","kind":"skip","omarchy":"SUPER + O","reason":"Ryoku binds Super+O to Notes; there is no sticky-floating action."},
@@ -53,7 +54,7 @@
   {"id":"monitor-scale","label":"Cycle monitor scaling","kind":"skip","omarchy":"SUPER + /","reason":"No equivalent action in Ryoku."},
   {"id":"panels","label":"Audio / Bluetooth / Wi-Fi / Display / Power panels","kind":"skip","omarchy":"SUPER + CTRL + A","reason":"Ryoku has one quick-settings surface on Super+Escape."},
   {"id":"notifications","label":"Dismiss notification","kind":"skip","omarchy":"SUPER + comma","reason":"Super+comma is Ryoku Settings and is always preserved."},
-  {"id":"theme","label":"Theme / background picker","kind":"skip","omarchy":"SUPER + CTRL + T","reason":"Ryoku themes through the wallpaper picker on Super+W."},
+  {"id":"theme","label":"Theme / background picker","kind":"skip","omarchy":"SUPER + CTRL + T","reason":"Ryoku themes through the wallpaper picker on Super+Ctrl+W."},
   {"id":"topbar","label":"Toggle the top bar","kind":"skip","omarchy":"SUPER + SHIFT + Space","reason":"No bar toggle action in Ryoku."},
   {"id":"gaps","label":"Toggle window gaps","kind":"skip","omarchy":"SUPER + SHIFT + Backspace","reason":"Gaps are a Ryoku Hub setting, not a toggle."},
   {"id":"idle-lock","label":"Toggle lock on idle","kind":"skip","omarchy":"SUPER + CTRL + I","reason":"Idle locking is configured in Ryoku Hub > Graphics & Power."},

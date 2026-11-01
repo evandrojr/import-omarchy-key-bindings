@@ -27,6 +27,7 @@ func catalog(t *testing.T, binds ...ryoku.Bind) ryoku.Catalog {
 func baseCatalog(t *testing.T) ryoku.Catalog {
 	return catalog(t,
 		ryoku.Bind{ID: "shell.lock", Label: "Lock", Combo: "SUPER + L", Rebindable: true},
+		ryoku.Bind{ID: "shell.wallpaper", Label: "Wallpaper", Combo: "SUPER + W", Rebindable: true},
 		ryoku.Bind{ID: "column.tabbed", Label: "Group", Combo: "SUPER + T", Rebindable: true},
 		ryoku.Bind{ID: "window.float", Label: "Float", Combo: "SUPER + A", Rebindable: true},
 		ryoku.Bind{ID: "column.center", Label: "Centre", Combo: "SUPER + C", Rebindable: true},
@@ -212,5 +213,30 @@ func TestSkipAndKeepRows(t *testing.T) {
 	}
 	if _, ok := plan.Targets[chord.Normalize("SUPER + SHIFT + M")]; ok {
 		t.Fatal("skip must not be a target")
+	}
+}
+
+func TestSuperWClosesAndWallpaperMoves(t *testing.T) {
+	plan, err := Build(Input{
+		Actions: []keymap.Action{
+			{ID: "wallpaper", Kind: keymap.Align, Omarchy: "SUPER + CTRL + W", Bind: "shell.wallpaper"},
+			{ID: "close-w", Kind: keymap.Add, Omarchy: "SUPER + W", Lua: "iokb_close()"},
+		},
+		Catalog: baseCatalog(t),
+		Rebinds: map[string]string{},
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := movesByBind(plan)["shell.wallpaper"].To; got != "SUPER + CTRL + W" {
+		t.Fatalf("wallpaper fallback = %q", got)
+	}
+	if len(plan.Adds) != 1 || plan.Adds[0].Chord != "SUPER + W" {
+		t.Fatalf("adds = %+v", plan.Adds)
+	}
+	for _, r := range plan.Rows {
+		if r.Result == ResultError {
+			t.Fatalf("row error: %+v", r)
+		}
 	}
 }
