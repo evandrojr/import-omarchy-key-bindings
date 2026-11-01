@@ -135,6 +135,8 @@ reload ou `configerrors` dispara o rollback automaticamente.
   confira uma vez.
 - O clipboard usa `send_key_state`; layouts não-latinos podem precisar de ajuste
   de keysym.
+- `F9` chama o dictation do Ryoku (`ryoku-shell voice`); o tool **não** baixa
+  modelo nem liga o ditado — isso é feito em Ryoku Hub > Dictation.
 
 ## Config do herdr
 

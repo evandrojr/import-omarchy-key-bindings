@@ -37,6 +37,7 @@
   {"id":"btop","label":"btop","kind":"add","omarchy":"SUPER + SHIFT + T","lua":"hl.dsp.exec_cmd(\"kitty -e btop\")"},
   {"id":"color-picker","label":"Colour picker","kind":"add","omarchy":"SUPER + Print","lua":"hl.dsp.exec_cmd(\"hyprpicker -a\")"},
   {"id":"dictation","label":"Dictation","kind":"add","omarchy":"SUPER + CTRL + X","lua":"hl.dsp.exec_cmd(\"ryoku-shell voice\")"},
+  {"id":"push-to-talk","label":"Push-to-talk (F9)","kind":"add","omarchy":"F9","lua":"hl.dsp.exec_cmd(\"ryoku-shell voice\")"},
   {"id":"share","label":"Share (LocalSend)","kind":"add","omarchy":"SUPER + CTRL + S","lua":"hl.dsp.exec_cmd(\"localsend\")"},
 
   {"id":"wallpaper","label":"Wallpaper / theme picker","kind":"align","bind":"shell.wallpaper","omarchy":"SUPER + CTRL + W"},
